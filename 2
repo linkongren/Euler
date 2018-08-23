@@ -1,0 +1,25 @@
+代码 
+
+#include <stdio.h>
+ #define max 4000000
+ 
+ 
+ int main ()
+ {
+     int ans = 0;
+     int b[3] = {0};
+     b[1] = b[2] = 1;
+     for(int i = 3; ; i++){
+         b[i % 3] = b[(i - 1) % 3] + b[(i - 2) % 3];
+         if(b[i % 3] > max) break;
+         if(b[i % 3] & 1) continue;
+         ans += b[i % 3];
+     }
+     printf("%d\n", ans);
+ 
+ 
+     return 0;
+ }
+
+
+有一个小发现 虽然好像没有什么用 就随便谢谢吧
